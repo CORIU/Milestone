@@ -1,8 +1,5 @@
 # My Projects
 
-#Step 1: Write a function that can print out a board. Set up your board as a list,
-# where each index 1-9 corresponds with a number on a number pad, so you get a 3 by 3 board representation.
-
 def display_board(board):
     print('   |   |')
     print(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
@@ -19,7 +16,6 @@ def display_board(board):
 test_board = ['#',' ',' ',' ',' ',' ',' ',' ',' ',' ']
 
 #print(display_board(test_board))
-# Write a function that can take in a player input and assign their marker as 'X' or 'O'.
 
 def player_input():
     marker = ''
@@ -34,8 +30,7 @@ def player_input():
 
 #print(player_input())
 
-# Write a function that takes in the board list object, a marker ('X' or 'O'),
-# and a desired position (number 1-9) and assigns it to the board
+
 def place_marker(board,marker,position):
    board[position] = marker
 
@@ -43,7 +38,7 @@ def place_marker(board,marker,position):
 #print(place_marker(test_board," ",7))
 #print(display_board(test_board))
 
-#Write a function that takes in a board and a mark (X or O) and then checks to see if that mark has won
+
 def win_check(board,mark):
     return ((board[7] == mark and board[8] == mark and board[9] == mark or
              (board[4] == mark and board[5] == mark and board[6] == mark or
@@ -67,7 +62,7 @@ def choose_first():
         return "Player 2"
 #print(choose_first())
 
-#Write a function that returns a boolean indicating whether a space on the board is freely available
+
 def space_check(board,position):
     if board[position] == ' ':
         print("returning true")
@@ -78,7 +73,7 @@ def space_check(board,position):
 
 #print(space_check(test_board,2))
 
-#Write a function that checks if the board is full and returns a boolean value. True if full, False otherwise.
+
 def full_board_check(board):
     for i in range(1,10):
         if space_check(board,i):
@@ -87,7 +82,7 @@ def full_board_check(board):
 
 #print(full_board_check(test_board))
 
-#Write a function that asks for a player's next position (as a number 1-9)
+
 def player_choice(board):
    position = 0
    while position not in [1,2,3,4,5,6,7,8,9] or not space_check(board,position):
@@ -95,8 +90,6 @@ def player_choice(board):
    return position
 #print(player_choice(test_board))
 
-#Write a function that asks the player if they want to play again and returns a boolean
-# True if they do want to play again.
 def replay():
    choice = input("Do you want to play again?Enter Yes or No")
    return choice == "Yes"
