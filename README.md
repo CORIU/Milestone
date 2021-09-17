@@ -20,7 +20,7 @@ test_board = ['#',' ',' ',' ',' ',' ',' ',' ',' ',' ']
 
 #print(display_board(test_board))
 # Write a function that can take in a player input and assign their marker as 'X' or 'O'.
-# Think about using while loops to continually ask until you get a correct answer.
+
 def player_input():
     marker = ''
     while not (marker == 'X'or marker == 'O'):
@@ -88,8 +88,6 @@ def full_board_check(board):
 #print(full_board_check(test_board))
 
 #Write a function that asks for a player's next position (as a number 1-9)
-# and then uses the function from step 6 to check if it's a free position. If it is,
-# then return the position for later use.
 def player_choice(board):
    position = 0
    while position not in [1,2,3,4,5,6,7,8,9] or not space_check(board,position):
