@@ -225,3 +225,80 @@ def hangman():
         print('You guessed the word',word)
 
 print(hangman())
+
+Exercises:
+#Display Fibonacci series up to 10 terms
+
+ def Fibonacci(n):
+     fibs = [0,1]
+     for i in range(2,n):
+         fibs.append(fibs[i - 1] + fibs[i - 2])
+     return fibs
+ 
+ #Write a loop to find the factorial of any number    
+    def factorial_num(num):
+    factorial = 1
+    for i in range(1,num + 1):
+        factorial = factorial * i  #why factorial becomes 2??
+         print("The number", num,"is",factorial)
+print(factorial_num(5))
+
+#Write a Python program that accepts a string and calculate the number of digits and letters.
+def dig_let():
+   str = input("Enter a string: ")
+   digit = 0
+   letters = 0
+   for i in str:
+      if i.isdigit():
+         digit += 1
+      elif i.isalpha():
+         letters +=1
+      else:
+         pass
+   print("The number of digit: ",digit)
+   print("The number of letters: ",letters)
+print(dig_let())
+
+
+#Write a Python program to check whether an alphabet is a vowel or consonant.
+def alphabet():
+   ch = input("Input a letter from the alphabet: ")
+   if(ch == 'A' or ch == 'a' or ch == 'E' or ch == 'e' or ch == 'I'or ch == 'i' or ch == 'O' or ch == 'o'
+      or ch == 'U'or ch == 'u'):
+      print(ch,"is a vowel")
+   else:
+      print(ch,"is a consonant")
+print(alphabet())
+
+
+#You are driving a little too fast, and a police officer stops you. Write code to compute the result,
+# encoded as an int value: 0=no ticket, 1=small ticket, 2=big ticket. If speed is 60 or less, the result is 0.
+# If speed is between 61 and 80 inclusive, the result is 1. If speed is 81 or more, the result is 2. Unless it is your birthday
+# -- on that day, your speed can be 5 higher in all cases.
+def caught_speeding(speed,is_birthday):
+   while not is_birthday:
+      if speed <= 60:
+
+         return 0
+      elif speed > 60 and speed < 81:
+         return 1
+      elif speed > 81:
+         return 2
+      elif is_birthday:
+         return 5
+   return caught_speeding(speed - 5,False)
+print(caught_speeding(60,False))
+print(caught_speeding(65,False))
+print(caught_speeding(65,True))
+
+# Given two strings, return True if either of the strings appears at the very end of the other string, ignoring
+# # upper/lower case differences (in other words, the computation should not be "case sensitive").
+# # Note: s.lower() returns the lowercase version of a string.
+def end_other(a,b):
+   a = a.lower()
+   b = b.lower()
+   return a.endswith(b) or b.endswith(a)
+print(end_other('Hiabc','abc'))
+print(end_other('AbC','HiaBc'))
+print(end_other('abc', 'abXabc'))
+
